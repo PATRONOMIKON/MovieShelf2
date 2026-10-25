@@ -32,3 +32,7 @@ export async function searchMovies(query, { signal } = {}) {
   const data = await request("/search/movie", { query: trimmedQuery, include_adult: false }, signal);
   return data.results || [];
 }
+
+export async function getMovieDetails(movieId, { signal } = {}) {
+  return request(`/movie/${encodeURIComponent(movieId)}`, {}, signal);
+}

@@ -71,6 +71,7 @@ function Header({ onSearchResults, onSearchError }) {
         </div>
         <nav className="nav-links" aria-label="Main navigation">
           <NavLink to="/" className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}>Home</NavLink>
+          <NavLink to="/watchlist" className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}>Watchlist</NavLink>
           <NavLink to="/favorites" className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}>Favorites ♥</NavLink>
         </nav>
       </div>

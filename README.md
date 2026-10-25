@@ -33,6 +33,9 @@ A React + Vite movie library using The Movie Database (TMDB) API.
 - Displays TMDB posters, release years, ratings, and overviews.
 - Adds and removes favorites, stored in browser `localStorage`.
 - Displays saved movies on `/favorites`.
+- Uses a `MovieProvider` and React Context to synchronize watchlist state across routes.
+- Supports multiple named watchlists, saved in `localStorage`, with add/remove controls on movie cards and details pages.
+- Displays movie details at `/movie/:id`, including overview, rating, genres, runtime, and backdrop when available.
 - Includes loading, error, empty, and retry states.
 - Responsive layout for desktop and mobile.
 

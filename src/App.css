@@ -285,3 +285,69 @@ button:focus-visible, a:focus-visible, input:focus-visible {
   .movie-overview { font-size: .78rem; }
   .favorite-button { font-size: .75rem; }
 }
+
+/* Context-powered watchlists and movie details */
+.movie-card-actions { display: grid; gap: .5rem; }
+.watchlist-button {
+  width: 100%; padding: .7rem .5rem; color: #d9d0ff; background: #252d3d;
+  border: 1px solid #3f506c; border-radius: 8px; font-size: .82rem; font-weight: 700;
+  transition: background .2s ease, border-color .2s ease;
+}
+.watchlist-button:hover { background: #303d56; border-color: #7893c2; }
+.watchlist-button.watchlisted { color: #d9ffe8; background: #214336; border-color: #3d755d; }
+.card-list-hint { margin: .55rem 0 0; color: #8f879f; font-size: .72rem; }
+.watchlist-tools {
+  display: flex; align-items: center; flex-wrap: wrap; gap: .75rem; margin-bottom: 2rem;
+  padding: 1rem; background: rgba(34, 29, 44, .7); border: 1px solid #393044; border-radius: 12px;
+}
+.watchlist-select-label { color: #c9c3d6; font-size: .88rem; font-weight: 700; }
+.watchlist-select, .create-watchlist-form input {
+  min-width: 180px; padding: .7rem .8rem; color: #f7f5fb; background: #211e2b;
+  border: 1px solid #49415b; border-radius: 8px;
+}
+.watchlist-select option { background: #211e2b; }
+.create-watchlist-form { display: flex; flex: 1; flex-wrap: wrap; gap: .5rem; }
+.create-watchlist-form input { flex: 1; }
+.primary-button, .secondary-button {
+  padding: .7rem 1rem; color: white; background: #6e4ab2; border: 1px solid #8566c5;
+  border-radius: 8px; font-weight: 700;
+}
+.primary-button:hover { background: #815bc8; }
+.primary-button:disabled { opacity: .5; cursor: not-allowed; }
+.secondary-button { background: #30283e; border-color: #514366; }
+.secondary-button:hover { background: #49345e; }
+.watchlist-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin: 0 0 1rem; }
+.watchlist-heading h2 { margin: 0; font-size: 1.35rem; }
+.watchlist-heading span { color: #aaa5b9; font-size: .9rem; }
+.movie-poster-link { display: block; }
+.movie-title a:hover { color: #c6b5ff; }
+.movie-detail-page { position: relative; flex: 1; overflow: hidden; }
+.movie-detail-backdrop { position: absolute; inset: 0 0 auto; height: 620px; background-position: center 20%; background-size: cover; opacity: .72; pointer-events: none; }
+.movie-detail-content { position: relative; width: min(1280px, 100%); margin: 0 auto; padding: 2rem 5% 5rem; }
+.back-link { display: inline-block; margin-bottom: 2rem; color: #c6b5ff; font-weight: 700; }
+.back-link:hover { color: #fff; }
+.movie-detail-layout { display: grid; grid-template-columns: minmax(220px, 340px) minmax(0, 1fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; }
+.movie-detail-poster { overflow: hidden; border: 1px solid #49415b; border-radius: 14px; background: #211e2b; box-shadow: 0 20px 55px rgba(0,0,0,.35); }
+.movie-detail-poster img { display: block; width: 100%; height: auto; }
+.movie-detail-copy { padding-top: 1rem; }
+.movie-detail-copy h1 { margin: .3rem 0 1rem; font-size: clamp(2.3rem, 5vw, 4.5rem); line-height: 1.05; letter-spacing: -.05em; }
+.movie-detail-meta { display: flex; flex-wrap: wrap; gap: .6rem 1rem; margin-bottom: 2rem; color: #d0c9df; font-size: .9rem; }
+.movie-detail-copy h2 { margin: 0 0 .7rem; font-size: 1.25rem; }
+.movie-detail-overview { max-width: 760px; color: #c3bdcf; font-size: 1.05rem; line-height: 1.8; }
+.detail-watchlist-button { margin-top: 1rem; }
+.detail-watchlist-button.saved { background: #214336; border-color: #3d755d; }
+.movie-tagline { margin-top: 2rem; color: #c6b5ff; font-style: italic; }
+@media (max-width: 850px) {
+  .movie-detail-layout { grid-template-columns: minmax(160px, 240px) minmax(0, 1fr); gap: 1.5rem; }
+  .movie-detail-content { padding-top: 1.5rem; }
+}
+@media (max-width: 560px) {
+  .movie-card-actions { gap: .4rem; }
+  .watchlist-button { font-size: .72rem; }
+  .watchlist-tools { align-items: stretch; flex-direction: column; }
+  .watchlist-select, .create-watchlist-form input { width: 100%; }
+  .movie-detail-layout { grid-template-columns: 1fr; }
+  .movie-detail-poster { width: min(70%, 280px); }
+  .movie-detail-copy { padding-top: 0; }
+  .movie-detail-copy h1 { font-size: 2.5rem; }
+}
